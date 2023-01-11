@@ -12,22 +12,16 @@
       <div class="header__content">
         <div class="container">
           <div class="header__nav">
-            <div class="header__logo">
-              <img src="./img/header_logo.svg" alt="" />
-            </div>
-            <div class="header__menu">
-              <ul>
-                <li><a href="#">Портфолио</a></li>
-                <li><a href="#">Услуги</a></li>
-                <li><a href="#">Контакты</a></li>
-              </ul>
-            </div>
+            <ul>
+              <li><a href="#">Портфолио</a></li>
+              <li><a href="#">Услуги</a></li>
+              <li><a href="#">Контакты</a></li>
+            </ul>
           </div>
 
           <div class="header_intro">
-            <div class="header__title">
-              Видеосопровождение <br />
-              <strong>любых масштабов</strong>
+            <div class="header__logo">
+              <img src="./img/header_logo.svg" alt="" />
             </div>
 
             <p class="header__text">
@@ -48,94 +42,73 @@
       </div>
     </header>
 
-    <main>
+    <main class="main">
+      <div class="bg__img higher">
+        <img src="./img/BG/bg1.png" alt="" />
+      </div>
+      <div class="bg__img below">
+        <img src="./img/BG/bg2.png" alt="" />
+      </div>
       <section class="services">
         <div class="container">
           <div class="services__content">
             <div class="services__title">
-              <h2>Любой <strong> вид съемок</strong></h2>
+              <h2>Любой <strong>вид съемок</strong></h2>
             </div>
-            <div class="services__subtitle">
+            <!-- <div class="services__subtitle">
               <h3>Небольшое описание видов работ и портфолио</h3>
-            </div>
+            </div> -->
           </div>
           <div class="services__items">
             <div class="services__bar">
               <div class="bar__desc">
                 <h4>Прямые трансляции</h4>
-                <a href="#" class="services__about">
-                  <p>Короткое описание</p>
+                <a href="#" class="services__more">
+                  <p>Подробнее</p>
                   <img src="./img/services/arrow-right.svg" alt="" />
                 </a>
               </div>
               <div class="services__cover">
                 <div class="services__photo-overlay"></div>
-                <img src="./img/services/bar1.jpg" alt="" />
+                <img
+                  class="services__photo"
+                  src="./img/services/bar1.jpg"
+                  alt=""
+                />
               </div>
             </div>
             <div class="services__bar">
               <div class="bar__desc">
                 <h4>Видеопроизводство</h4>
-                <a href="#" class="services__about">
-                  <p>Короткое описание</p>
+                <a href="#" class="services__more">
+                  <p>Подробнее</p>
                   <img src="./img/services/arrow-right.svg" alt="" />
                 </a>
               </div>
               <div class="services__cover">
                 <div class="services__photo-overlay"></div>
-                <img src="./img/services/bar2.jpg" alt="" />
+                <img
+                  class="services__photo"
+                  src="./img/services/bar2.jpg"
+                  alt=""
+                />
               </div>
             </div>
             <div class="services__bar">
               <div class="bar__desc">
                 <h4>Видеомонтаж</h4>
-                <a href="#" class="services__about">
-                  <p>Короткое описание</p>
+                <a href="#" class="services__more">
+                  <p>Подробнее</p>
                   <img src="./img/services/arrow-right.svg" alt="" />
                 </a>
               </div>
               <div class="services__cover">
                 <div class="services__photo-overlay"></div>
-                <img src="./img/services/bar3.jpg" alt="" />
-              </div>
-            </div>
-            <div class="services__bar">
-              <div class="bar__desc">
-                <h4>Прямые трансляции</h4>
-                <a href="#" class="services__about">
-                  <p>Короткое описание</p>
-                  <img src="./img/services/arrow-right.svg" alt="" />
-                </a>
-              </div>
-              <div class="services__cover">
-                <div class="services__photo-overlay"></div>
-                <img src="./img/services/bar1.jpg" alt="" />
-              </div>
-            </div>
-            <div class="services__bar">
-              <div class="bar__desc">
-                <h4>Видеопроизводство</h4>
-                <a href="#" class="services__about">
-                  <p>Короткое описание</p>
-                  <img src="./img/services/arrow-right.svg" alt="" />
-                </a>
-              </div>
-              <div class="services__cover">
-                <div class="services__photo-overlay"></div>
-                <img src="./img/services/bar2.jpg" alt="" />
-              </div>
-            </div>
-            <div class="services__bar">
-              <div class="bar__desc">
-                <h4>Видеомонтаж</h4>
-                <a href="#" class="services__about">
-                  <p>Короткое описание</p>
-                  <img src="./img/services/arrow-right.svg" alt="" />
-                </a>
-              </div>
-              <div class="services__cover">
-                <div class="services__photo-overlay"></div>
-                <img src="./img/services/bar3.jpg" alt="" />
+                <img
+                  class="services__photo"
+                  src="./img/services/bar3.jpg"
+                  alt=""
+                />
               </div>
             </div>
           </div>
@@ -147,30 +120,26 @@
           <div class="about__itmes">
             <div class="about__item">
               <div class="about__text">
-                <h2 class="about__title">
-                  Что-нибудь <br />
-                  <strong>про технику</strong>
-                </h2>
+                <h2 class="about__title">Лучшая <strong>техника</strong></h2>
                 <p class="about__desc">
-                  Таким образом, социально- экономическое развитие обеспечивает
-                  широкому кругу специалистов участие в формировании направлений
-                  прогрессивного развития!
+                  Мы используем только профессиональную технику самых именитых
+                  брендов. Комплект необходимой техники будет подобрал
+                  персонально для Вашего мероприятия!
                 </p>
               </div>
               <div class="about__img">
-                <img src="./img/about/Group 1.png" alt="" />
+                <img src="./img/about/cameras1.png" alt="" />
               </div>
             </div>
             <div class="about__item">
               <div class="about__text">
                 <h2 class="about__title">
-                  Что-нибудь <br />
-                  <strong>про технику</strong>
+                  Команда <strong>профессионалов</strong>
                 </h2>
                 <p class="about__desc">
-                  Таким образом, социально- экономическое развитие обеспечивает
-                  широкому кругу специалистов участие в формировании направлений
-                  прогрессивного развития!
+                  В нашей команде подобраны только высококлассные специалисты.
+                  Вы получите возможность поприсутствовать на площадке,
+                  последить за процессом и получить незабываемый опыт и эмоции!
                 </p>
               </div>
               <div class="about__img">
@@ -179,14 +148,11 @@
             </div>
             <div class="about__item">
               <div class="about__text">
-                <h2 class="about__title">
-                  Что-нибудь <br />
-                  <strong>про технику</strong>
-                </h2>
+                <h2 class="about__title">Большой <strong>опыт</strong></h2>
                 <p class="about__desc">
-                  Таким образом, социально- экономическое развитие обеспечивает
-                  широкому кругу специалистов участие в формировании направлений
-                  прогрессивного развития!
+                  Мы организовали множество крупных международных конференций и
+                  приняли участие в съёмке топографического конкурса «Меридиан»
+                  на форуме Армия 2021
                 </p>
               </div>
               <div class="about__img">
@@ -222,19 +188,20 @@
           </div>
         </div>
       </section>
-    </main>
 
-    <footer class="footer">
-      <div class="container">
-        <div class="footer__content">
-          <h4 class="footer__title">Аренда техники</h4>
-          <p class="footer__desc">
-            У нас самая крутая техника, самые крутые условия для её получения и
-            сдачи.
-          </p>
-          <a href="#" class="footer__link">Узнать цену на технику</a>
+      <section class="rent">
+        <div class="container">
+          <div class="rent__content">
+            <h4 class="rent__title">Аренда техники</h4>
+            <p class="rent__desc">
+              У нас самая крутая техника, самые крутые условия для её получения
+              и сдачи.
+            </p>
+            <a href="#" class="rent__link">Узнать цену на технику</a>
+          </div>
         </div>
-      </div>
-    </footer>
+      </section>
+    </main>
+    <script src="./js/script.js"></script>
   </body>
 </html>
