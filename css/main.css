@@ -1,6 +1,15 @@
 @import url(./reset.css);
 @import url("./gotham/stylesheet.css");
 
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 body {
   color: white;
   background-color: #101010;
@@ -22,7 +31,7 @@ body {
 
 /* VIDEO */
 
-.header__video {
+.bg__video {
   position: absolute;
   width: 100%;
   overflow: hidden;
@@ -31,7 +40,7 @@ body {
   z-index: -1;
 }
 
-.header__video::after {
+.bg__video::after {
   content: "";
   display: block;
   width: 100%;
@@ -46,13 +55,7 @@ body {
   z-index: 2;
 }
 
-/* .video {
-  position: relative;
-  z-index: 1;
-  padding-bottom: 56%;
-} */
-
-.header__video video {
+.bg__video video {
   width: 100%;
   height: 100vh;
   object-fit: cover;
@@ -115,6 +118,13 @@ body {
 .header__logo {
   width: 671px;
   height: 343px;
+  transform: translateY(30%);
+  opacity: 0;
+  transition: all 0.8s ease;
+}
+.header__logo.animated {
+  transform: translateY(0);
+  opacity: 1;
 }
 
 .header__logo img {
@@ -145,6 +155,24 @@ body {
   line-height: 1.4;
 
   text-align: center;
+
+  transform: translateY(30%);
+  opacity: 0;
+  transition: all 1s ease 0.5s;
+}
+.header__text.animated {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.header__link {
+  transform: translateX(30%);
+  opacity: 0;
+  transition: all 1s ease 1s;
+}
+.header__link.animated {
+  transform: translateX(0);
+  opacity: 1;
 }
 
 .header__link a {
@@ -226,11 +254,11 @@ body {
 
 .bg__img {
   width: 120%;
-  justify-self: center;
+  height: auto;
   position: absolute;
   z-index: -1;
-  left: 0;
-  /* animation: bganimation 5s 0s infinite ease-in-out; */
+  /* left: 50%;
+  transform: translateX(-50%); */
 }
 
 .higher {
@@ -240,17 +268,6 @@ body {
   bottom: 0%;
 }
 
-/* @keyframes bganimation {
-  0% {
-    transform: rotate(0deg);
-  }
-  50% {
-    transform: rotate(1deg);
-  }
-  100% {
-    transform: rotate(0deg);
-  }
-} */
 /* BARS SECTION */
 
 .services {
@@ -292,6 +309,15 @@ body {
   position: relative;
   max-width: 442px;
   max-height: 284px;
+  transition: scale 0.2s ease-in, box-shadow 0.2s ease-in;
+}
+.services__bar:hover {
+  scale: 1.1;
+  z-index: 3;
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.5);
+}
+.services__bar:hover .services__more {
+  column-gap: 35px;
 }
 
 .services__cover {
@@ -323,12 +349,10 @@ body {
 
 .bar__desc h4 {
   margin-bottom: 19px;
-  font-family: "Gotham Pro";
-  font-style: normal;
   font-weight: 700;
   font-size: 33.2px;
   line-height: 32px;
-
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   color: #ffffff;
 }
 
@@ -338,23 +362,18 @@ body {
   transition: 0.2s ease-in;
 }
 
-.services__more:hover {
-  column-gap: 30px;
-}
-
 .services__more p {
   position: relative;
-  font-family: "Gotham Pro";
-  font-style: normal;
+
   font-weight: 300;
-  font-size: 22.8px;
-  line-height: 22px;
+  font-size: 20px;
+  line-height: 0.95;
 
   color: #ffffff;
 }
 
 .services__more img {
-  width: 49.3px;
+  width: 49px;
 }
 
 @media (max-width: 1440px) {
@@ -437,9 +456,6 @@ body {
     width: 17.68px;
   }
 }
-/* sadsakjdhkjawhdowuahdilashfilwhafihwaiofhwaioskldjawidjasjdwilajdilsjadliwja */
-
-/* sadsakjdhkjawhdowuahdilashfilwhafihwaiofhwaioskldjawidjasjdwilajdilsjadliwja */
 
 /* About us */
 .about {
@@ -496,7 +512,24 @@ body {
 }
 .about__img {
   height: auto;
+  /* animation: rotation 30s linear infinite; */
 }
+
+/* .about__img img {
+  animation: rotation 10s infinite ease;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+  100% {
+    transform: rotate(-5deg);
+  }
+} */
 
 @media (max-width: 1440px) {
   .about__item {

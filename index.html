@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -20,29 +20,35 @@
           </div>
 
           <div class="header_intro">
-            <div class="header__logo">
+            <div class="header__logo animated_item">
               <img src="./img/header_logo.svg" alt="" />
             </div>
 
-            <p class="header__text">
+            <p class="header__text animated_item">
               Организация прямых трансляций, видеопроизводство и техническое
               сопровождение от небольших корпоративных мероприятий до масштаба
               международных форумов и конференций.
             </p>
 
-            <div class="header__link">
-              <a href="">Подробнее</a>
+            <div class="header__link animated_item">
+              <a href="#main">Подробнее</a>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="header__video">
-        <video src="./img/headervideo1.mp4" autoplay muted loop></video>
+      <div class="bg__video">
+        <video
+          src="./img/headervideo1.mp4"
+          autoplay
+          loop
+          muted
+          playsinline
+        ></video>
       </div>
     </header>
 
-    <main class="main">
+    <main class="main" id="main">
       <div class="bg__img higher">
         <img src="./img/BG/bg1.png" alt="" />
       </div>
@@ -55,18 +61,15 @@
             <div class="services__title">
               <h2>Любой <strong>вид съемок</strong></h2>
             </div>
-            <!-- <div class="services__subtitle">
-              <h3>Небольшое описание видов работ и портфолио</h3>
-            </div> -->
           </div>
           <div class="services__items">
-            <div class="services__bar">
+            <a href="#" class="services__bar">
               <div class="bar__desc">
                 <h4>Прямые трансляции</h4>
-                <a href="#" class="services__more">
+                <div class="services__more">
                   <p>Подробнее</p>
                   <img src="./img/services/arrow-right.svg" alt="" />
-                </a>
+                </div>
               </div>
               <div class="services__cover">
                 <div class="services__photo-overlay"></div>
@@ -76,14 +79,14 @@
                   alt=""
                 />
               </div>
-            </div>
-            <div class="services__bar">
+            </a>
+            <a href="#" class="services__bar">
               <div class="bar__desc">
                 <h4>Видеопроизводство</h4>
-                <a href="#" class="services__more">
+                <div class="services__more">
                   <p>Подробнее</p>
                   <img src="./img/services/arrow-right.svg" alt="" />
-                </a>
+                </div>
               </div>
               <div class="services__cover">
                 <div class="services__photo-overlay"></div>
@@ -93,14 +96,14 @@
                   alt=""
                 />
               </div>
-            </div>
-            <div class="services__bar">
+            </a>
+            <a href="#" class="services__bar">
               <div class="bar__desc">
                 <h4>Видеомонтаж</h4>
-                <a href="#" class="services__more">
+                <div class="services__more">
                   <p>Подробнее</p>
                   <img src="./img/services/arrow-right.svg" alt="" />
-                </a>
+                </div>
               </div>
               <div class="services__cover">
                 <div class="services__photo-overlay"></div>
@@ -110,7 +113,7 @@
                   alt=""
                 />
               </div>
-            </div>
+            </a>
           </div>
         </div>
       </section>
@@ -202,6 +205,7 @@
         </div>
       </section>
     </main>
+
     <script src="./js/script.js"></script>
   </body>
 </html>
