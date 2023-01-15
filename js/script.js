@@ -18,11 +18,18 @@ for (let anchor of anchors) {
 }
 
 const animItems = document.querySelectorAll(".animated_item");
-console.log(animItems);
+const animBackground = document.querySelector(".bg__img");
 
 if (animItems.length > 0) {
   window.addEventListener("scroll", animOnScroll);
   function animOnScroll() {
+    // console.log(window.scrollY);
+    // if (window.scrollY >= 700) {
+    //   animBackground.style.transform = `translateX(${
+    //     (window.scrollY - 700) / 300
+    //   }%)`;
+    // }
+
     for (let index = 0; index < animItems.length; index++) {
       const animItem = animItems[index];
       const animItemHeight = animItem.offsetHeight;
@@ -42,6 +49,20 @@ if (animItems.length > 0) {
       } else {
         animItem.classList.remove("animated");
       }
+
+      animItemPoint = window.innerHeight - animItemHeight;
+      if (animItemHeight > window.innerHeight) {
+        animItemPoint = window.innerHeight - window.innerHeight;
+      }
+
+      if (
+        window.scrollY > animItemOffset - animItemPoint &&
+        window.scrollY < animItemOffset + animItemHeight / 8
+      ) {
+        animItem.classList.add("active");
+      } else {
+        animItem.classList.remove("active");
+      }
     }
   }
   function offset(el) {
@@ -55,12 +76,3 @@ if (animItems.length > 0) {
 setTimeout(() => {
   animOnScroll();
 }, 300);
-
-// const bgImgs = document.querySelector(".bg__img");
-
-// window.addEventListener("scroll", function () {
-//   console.log(window.scrollY);
-//   if (window.scrollY > 600) {
-//     bgImgs.style.left = `${0 - (window.scrollY - 600) / 100}em`;
-//   }
-// });
