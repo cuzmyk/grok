@@ -18,17 +18,31 @@ for (let anchor of anchors) {
 }
 
 const animItems = document.querySelectorAll(".animated_item");
-const animBackground = document.querySelector(".bg__img");
+const animBackground1 = document.querySelector(".bg-wave-1");
+const animBackground2 = document.querySelector(".bg-wave-2");
+const animBackground3 = document.querySelector(".bg-wave-3");
 
 if (animItems.length > 0) {
   window.addEventListener("scroll", animOnScroll);
+
   function animOnScroll() {
-    // console.log(window.scrollY);
-    // if (window.scrollY >= 700) {
-    //   animBackground.style.transform = `translateX(${
-    //     (window.scrollY - 700) / 300
-    //   }%)`;
-    // }
+    console.log(window.scrollY);
+
+    if (window.scrollY >= 400 && window.scrollY <= 2200) {
+      animBackground1.style.backgroundPosition = `top 0 right ${
+        50 - (window.scrollY - 400) / 4
+      }px`;
+    }
+    if (window.scrollY >= 2000) {
+      animBackground2.style.backgroundPosition = `top 0 right ${
+        -(window.scrollY - 2000) / 4
+      }px`;
+    }
+    if (window.scrollY >= 800 && window.scrollY <= 2600) {
+      animBackground3.style.backgroundPosition = `top 0 right ${
+        -50 + (window.scrollY - 800) / 8
+      }px`;
+    }
 
     for (let index = 0; index < animItems.length; index++) {
       const animItem = animItems[index];
