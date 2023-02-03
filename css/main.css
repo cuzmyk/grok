@@ -3,11 +3,12 @@
 
 :root {
   --animation-transition: cubic-bezier(0, 0.52, 0.43, 0.99);
+  --accent-color: #F6712B;
 }
 
 @font-face {
-  font-family: Kharkiv;
-  src: url(./../fonts/Kharkiv/Kharkiv.ttf);
+  font-family: TTFirsNeue;
+  src: url(./../fonts/TTFirsNeue/TTFirsNeue-DemiBold.ttf);
 }
 
 @keyframes rotation {
@@ -23,7 +24,9 @@ body {
   color: white;
   background-color: #101010;
   font-family: "Gotham Pro", sans-serif;
-  font-weight: 400;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1;
 }
 
 /* BASE */
@@ -38,11 +41,23 @@ body {
   display: none;
 }
 
+.title{
+  text-align: center;
+  font-family: TTFirsNeue;
+  font-weight: 400;
+  font-size: 39px;
+  line-height: 1.3;
+}
+.title strong {
+  color: var(--accent-color);
+}
+
 /* VIDEO */
 
 .bg__video {
   position: absolute;
   width: 100%;
+  height: 100vh;
   overflow: hidden;
   left: 0;
   top: 0;
@@ -73,60 +88,50 @@ body {
 /* HEADER */
 
 .header__content {
+  padding: 60px 0 170px 0;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .header__nav {
-  padding-top: 60px;
-  margin-bottom: 100px;
+  
 }
 
 .header__nav ul {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  column-gap: 250px;
 }
 
 .header__nav a {
   position: relative;
   color: #fff;
   font-weight: 400;
-  font-size: 16px;
-  line-height: 15px;
+  font-size: 20px;
+  line-height: 1;
 
   transition: 0.2s ease-in;
 }
-
-/* .header__nav a::after {
-  position: absolute;
-  content: "";
-  display: block;
-  width: 100%;
-  height: 1px;
-  left: 0;
-  bottom: -6px;
-  background-color: white;
-  transition: 0.2s ease-in;
-} */
 
 .header__nav a:hover {
-  color: #ff752c;
+  color: var(--accent-color);
 }
-/* .header__nav a:hover::after {
-  background-color: #ff752c;
-} */
 
 /* INTRO */
 .header_intro {
-  padding-top: 70px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  row-gap: 30px;
 }
 
 .header__logo {
   width: 671px;
-  height: 343px;
+height: 343px;
   transform: translateY(30%);
   opacity: 0;
   transition: all 0.8s var(--animation-transition);
@@ -142,11 +147,9 @@ body {
 }
 
 .header__text {
-  margin-bottom: 200px;
   text-align: center;
-
   padding-top: 40px;
-  max-width: 824px;
+  max-width: 696px;
   font-style: normal;
   font-weight: 300;
   font-size: 16px;
@@ -163,17 +166,28 @@ body {
   opacity: 1;
 }
 
-.header__link {
+.button{
+  position: relative;
+  max-width: fit-content;
+  color: #fff;
+  text-decoration: none;
+  padding: 15px 50px;
+  text-align: center;
+  border-radius: 20px;
+  background-color: var(--accent-color);
+}
+
+.header__button {
   transform: translateX(30%);
   opacity: 0;
   transition: all 0.8s var(--animation-transition) 1s;
 }
-.header__link.animated {
+.header__button.animated {
   transform: translateX(0);
   opacity: 1;
 }
 
-.header__link a {
+.header__button a {
   position: relative;
   font-weight: 400;
   font-size: 20px;
@@ -182,23 +196,12 @@ body {
   color: #fff;
 }
 
-/* .header__link a::after {
-  position: absolute;
-  content: "";
-  display: block;
-  width: 100%;
-  height: 1px;
-  left: 0;
-  bottom: -6px;
-  background-color: white;
-  transition: 0.2s ease-in;
-} */
 
-.header__link a:hover {
-  color: #ff752c;
+.header__button:hover {
+  color: var(--accent-color);
 }
 /* .header__link a:hover::after {
-  background-color: #ff752c;
+  background-color: var(--accent-color);;
 } */
 
 @media (max-width: 1440px) {
@@ -208,14 +211,7 @@ body {
   .header__menu ul {
     column-gap: 50px;
   }
-
-  .header__title {
-    font-size: 60px;
-    line-height: 105%;
-  }
-  .header__text {
-    margin-bottom: 130px;
-  }
+  
 }
 @media (max-width: 600px) {
   .container {
@@ -239,7 +235,7 @@ body {
     font-size: 10px;
     line-height: 1.36;
   }
-  .header__link a {
+  .header__button {
     display: none;
   }
 }
@@ -279,14 +275,8 @@ body {
 }
 
 .services__title {
-  font-family: Kharkiv;
   margin-bottom: 60px;
-  font-weight: 400;
-  font-size: 39px;
-  line-height: 1px;
-}
-.services__title strong {
-  color: #ff752c;
+  
 }
 
 .services__items {
@@ -294,12 +284,17 @@ body {
   justify-content: space-between;
   column-gap: 20px;
   flex-wrap: wrap;
-  row-gap: 30px;
+  row-gap: 40px;
 }
 .services__bar {
   position: relative;
-  max-width: 442px;
-  max-height: 284px;
+  padding: 40px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  row-gap: 25px;
+  width: 660px;
+  height: 426px;
   opacity: 0;
   transition: scale 0.2s ease-in, box-shadow 0.2s ease-in,
     transform 0.8s var(--animation-transition),
@@ -320,16 +315,8 @@ body {
   transform: translate(0, 0);
 }
 
-.services__bar:hover {
-  scale: 1.1;
-  z-index: 3;
-  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.5);
-}
-.services__bar:hover .services__more {
-  column-gap: 35px;
-}
-
-.services__photo-overlay {
+.services__bar::after {
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -340,46 +327,46 @@ body {
     rgba(0, 0, 0, 0) 65.83%,
     rgba(0, 0, 0, 0.75) 100%
   );
-}
-.services__photo {
-  width: 100%;
-  height: 100%;
+  z-index: -1;
 }
 
-.bar__desc {
-  position: absolute;
-  padding: 24px;
-  bottom: 0;
-  z-index: 2;
-}
+.bar__title {
+  font-family: TTFirsNeue;
+font-style: normal;
+font-weight: 600;
+font-size: 39px;
+line-height: 50px;
 
-.bar__desc h4 {
-  margin-bottom: 19px;
-  font-weight: 700;
-  font-size: 33.2px;
-  line-height: 32px;
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  color: #ffffff;
-}
+color: #FFFFFF;
 
-.services__more {
-  display: flex;
-  column-gap: 22px;
-  transition: 0.2s ease-in;
+text-shadow: 0px 6.00305px 6.00305px rgba(0, 0, 0, 0.25);
 }
-
-.services__more p {
+.bar__more {
   position: relative;
-
-  font-weight: 300;
-  font-size: 20px;
-  line-height: 0.95;
-
-  color: #ffffff;
+  color: #fff;
+}
+.bar__more::after{
+  position: absolute;
+  content: "";
+  display: block;
+  height: 10px;
+  width: 39px;
+  background-image: url(./../img/services/arrow-right.svg);
+  background-size: contain;
+  top:50%;
+  left: 20%;
+  transform: translateY(-50%);
+  z-index: 2;
+  transition: left 0.2s ease-in;
 }
 
-.services__more img {
-  width: 49px;
+.services__bar:hover {
+  scale: 1.1;
+  z-index: 3;
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.5);
+}
+.services__bar:hover .bar__more::after {
+  left: 30%;
 }
 
 @media (max-width: 1440px) {
@@ -507,19 +494,12 @@ body {
   text-align: center;
 }
 .about__title {
-  font-family: Kharkiv;
+  
   margin-bottom: 30px;
-  font-weight: 400;
-  font-size: 39px;
-  line-height: 1;
-  text-align: center;
-
-  color: #ffffff;
+  
 }
 
-.about__title strong {
-  color: #ff752c;
-}
+
 
 .about__desc {
   max-width: 445px;
@@ -666,15 +646,11 @@ backgorund light animation on scroll
   row-gap: 25px;
 }
 .team__title {
-  font-family: Kharkiv;
+
   margin-bottom: 95px;
-  font-weight: 400;
-  font-size: 39px;
-  line-height: 1;
+
 }
-.team__title strong {
-  color: #ff752c;
-}
+
 .team__member {
   position: relative;
   max-width: 442px;
@@ -759,8 +735,18 @@ backgorund light animation on scroll
 .rent {
   margin-bottom: 200px;
 }
+.rent__button{
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 50px;
+}
 .rent__content {
-  padding: 240px 430px;
+  height: 50vh;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   text-align: center;
   background-color: rgba(13, 13, 13, 0.9);
   transform: translate(0, 20%);
@@ -809,7 +795,7 @@ backgorund light animation on scroll
 }
 
 .rent__link:hover {
-  color: #ff752c;
+  color: var(--accent-color);;
 }
 
 .rent__link::after {
@@ -826,7 +812,7 @@ backgorund light animation on scroll
 }
 
 .rent__link:hover:after {
-  background-color: #ff752c;
+  background-color: var(--accent-color);;
 }
 
 @media (max-width: 600px) {
@@ -913,15 +899,15 @@ backgorund light animation on scroll
   transition: background-color 0.2s ease-in;
 }
 .goback__link:hover {
-  color: #ff752c;
+  color: var(--accent-color);;
 }
 .goback__link:hover::after {
-  background-color: #ff752c;
+  background-color: var(--accent-color);;
 }
 .service__title {
   padding-top: 200px;
   margin-bottom: 60px;
-  font-family: Kharkiv;
+  font-family: TTFirsNeue;
   font-weight: 400;
   font-size: 130px;
   line-height: 0.95;
@@ -929,7 +915,7 @@ backgorund light animation on scroll
   text-shadow: 0px 0px 61px rgba(0, 0, 0, 0.1);
 }
 .service__title strong {
-  color: #ff752c;
+  color: var(--accent-color);;
 }
 
 .video__play {
