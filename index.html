@@ -10,7 +10,7 @@
   <body>
     <header class="header">
       <div class="container">
-      <div class="header__content">
+        <div class="header__content">
           <div class="header__nav">
             <ul>
               <li><a href="#">Портфолио</a></li>
@@ -29,11 +29,11 @@
               сопровождение от небольших корпоративных мероприятий до масштаба
               международных форумов и конференций.
             </p>
-
           </div>
-          
-            <a class="button header__button animated_item" href="#main">Подробнее</a>
-          
+
+          <a class="button header__button animated_item" href="#main"
+            >Подробнее</a
+          >
         </div>
       </div>
 
@@ -49,14 +49,19 @@
     </header>
 
     <main class="main" id="main">
-      <div class="background">
-        <div class="bg__img higher">
-          <img src="./img/BG/bg1.png" alt="" />
-        </div>
-        <div class="bg__img below">
-          <img src="./img/BG/bg2.png" alt="" />
-        </div>
-      </div>
+      <div
+        class="bg__img"
+        style="background-image: url(./img/BG/backgroundDecorations.svg)"
+      ></div>
+      <div
+        class="bg__img"
+        style="background-image: url(./img/BG/backgroundDecorations.svg)"
+      ></div>
+      <div
+        class="bg__img"
+        style="background-image: url(./img/BG/backgroundDecorationsFlipped.svg)"
+      ></div>
+
       <section class="services">
         <div class="container">
           <div class="services__content">
@@ -65,11 +70,19 @@
             </div>
           </div>
           <div class="services__items">
-            <a href="#" class="services__bar animated_item" style="background-image: url(./img/services/streams.jpg);">
+            <a
+              href="streaming.html"
+              class="services__bar animated_item"
+              style="background-image: url(./img/services/streams.jpg)"
+            >
               <h3 class="bar__title">Прямые трансляции</h3>
               <p class="bar__more">Подробнее</p>
             </a>
-            <a href="videoProduction.html" class="services__bar animated_item" style="background-image: url(./img/services/videoproduction.jpg);">
+            <a
+              href="videoProduction.html"
+              class="services__bar animated_item"
+              style="background-image: url(./img/services/videoproduction.jpg)"
+            >
               <h3 class="bar__title">Видеопроизводство</h3>
               <p class="bar__more">Подробнее</p>
             </a>
@@ -82,7 +95,9 @@
           <div class="about__itmes">
             <div class="about__item animated_item">
               <div class="about__text">
-                <h2 class="title about__title">Лучшая <strong>техника</strong></h2>
+                <h2 class="title about__title">
+                  Лучшая <strong>техника</strong>
+                </h2>
                 <p class="about__desc">
                   Мы используем только профессиональную технику самых именитых
                   брендов. Комплект необходимой техники будет подобрал
@@ -110,7 +125,9 @@
             </div>
             <div class="about__item animated_item">
               <div class="about__text">
-                <h2 class="title about__title">Большой <strong>опыт</strong></h2>
+                <h2 class="title about__title">
+                  Большой <strong>опыт</strong>
+                </h2>
                 <p class="about__desc">
                   Мы организовали множество крупных международных конференций и
                   приняли участие в съёмке топографического конкурса «Меридиан»
@@ -155,11 +172,12 @@
         <div class="container">
           <button class="button rent__button">Получить консультацию</button>
           <div class="rent__content animated_item">
-            <h4 class="rent__title">Аренда техники</h4>
+            <h4 class="title rent__title">Аренда техники</h4>
             <p class="rent__desc">
               У нас самая крутая техника, самые крутые условия для её получения
               и сдачи.
             </p>
+
             <a href="#" class="rent__link">Узнать цену на технику</a>
           </div>
         </div>
