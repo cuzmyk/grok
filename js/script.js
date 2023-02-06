@@ -26,23 +26,44 @@ if (animItems.length > 0) {
   window.addEventListener("scroll", animOnScroll);
 
   function animOnScroll() {
-    console.log(window.scrollY);
+    // console.log(window.scrollY);
 
-    if (window.scrollY >= 400 && window.scrollY <= 2200) {
-      animBackground1.style.backgroundPosition = `top 0 right ${
-        50 - (window.scrollY - 400) / 4
-      }px`;
-    }
+    // if (window.scrollY >= 400 && window.scrollY <= 2200) {
+    //   animBackground1.style.backgroundPosition = `top 0 right ${
+    //     // window.screen.width / 10 -
+    //     // (window.scrollY - 400) / (window.screen.width / 500)
+    //   }px)`;
+    // }
+    const screenWidth = window.screen.width;
+    let coef;
+    screenWidth >= 1800
+      ? (coef = 0.1 / screenWidth)
+      : (coef = 0.7 / screenWidth);
+    // coef = 0.1 / screenWidth;
+    animBackground1.style.backgroundPosition = `top 0 right ${
+      -screenWidth * coef - screenWidth * window.scrollY * coef
+    }px`;
+
     if (window.scrollY >= 2000) {
       animBackground2.style.backgroundPosition = `top 0 right ${
         -(window.scrollY - 2000) / 4
       }px`;
     }
     if (window.scrollY >= 800 && window.scrollY <= 2600) {
-      animBackground3.style.backgroundPosition = `top 0 right ${
+      animBackground3.style.backgroundPosition = `bottom 0 right ${
         -50 + (window.scrollY - 800) / 8
       }px`;
     }
+    // if (window.scrollY >= 2000) {
+    //   animBackground2.style.backgroundPosition = `top 0 right ${
+    //     -(window.scrollY - 2000) / 4
+    //   }px`;
+    // }
+    // if (window.scrollY >= 800 && window.scrollY <= 2600) {
+    //   animBackground3.style.backgroundPosition = `top 0 right ${
+    //     -50 + (window.scrollY - 800) / 8
+    //   }px`;
+    // }
 
     for (let index = 0; index < animItems.length; index++) {
       const animItem = animItems[index];
@@ -85,8 +106,28 @@ if (animItems.length > 0) {
       scrollTop = window.scrollY || document.documentElement.scrollTop;
     return { top: rect.top + scrollTop, left: rect.left + scrollLeft };
   }
+  setTimeout(() => {
+    animOnScroll();
+  }, 300);
 }
 
-setTimeout(() => {
-  animOnScroll();
-}, 300);
+const consultaionBtn = document.querySelectorAll("button.button");
+const closeConsultaionBtn = document.querySelectorAll(".close-contact-window");
+const contactWindow = document.querySelector(".contact-window");
+
+consultaionBtn.forEach((e) => {
+  e.onclick = function () {
+    contactWindow.classList.remove("none");
+  };
+});
+closeConsultaionBtn.forEach((e) => {
+  e.onclick = function () {
+    contactWindow.classList.add("none");
+  };
+  document.onkeydown = function (e) {
+    e = e || window.event;
+    if (e.key === "Escape") {
+      contactWindow.classList.add("none");
+    }
+  };
+});
