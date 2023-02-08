@@ -170,7 +170,7 @@ body {
   opacity: 0;
   transition: all 0.8s var(--animation-transition);
 }
-@media (max-height: 800px){
+@media (max-height: 800px) {
   .header__logo {
     max-width: 75%;
   }
@@ -217,10 +217,10 @@ body {
   .container {
     max-width: 1000px;
   }
-  .title{
+  .title {
     font-size: 30px;
   }
-  .header__content{
+  .header__content {
     padding: 40px 0 130px 0;
   }
   .header__nav ul {
@@ -236,7 +236,6 @@ body {
   .header__text {
     max-width: 70%;
     font-size: 14px;
-   
   }
 }
 @media (max-width: 600px) {
@@ -376,7 +375,7 @@ body {
 }
 
 .bar__title {
-  text-align: left; 
+  text-align: left;
   line-height: 1.4;
   color: #ffffff;
   text-shadow: 0px 6px 6px rgba(0, 0, 0, 0.25);
@@ -415,17 +414,14 @@ body {
     max-height: 300px;
     row-gap: 20px;
   }
-  .bar__more::after { 
+  .bar__more::after {
     left: 30%;
   }
-  
 }
 @media (max-width: 800px) {
-  
-  .bar__more::after { 
+  .bar__more::after {
     left: 40%;
   }
-  
 }
 @media (max-width: 600px) {
   .services {
@@ -438,9 +434,9 @@ body {
     line-height: 0.93;
   }
   .services__items {
-      flex-direction: column;
-      align-items: center;
-    
+    flex-direction: column;
+    align-items: center;
+
     row-gap: 13px;
   }
   .services__content {
@@ -561,33 +557,31 @@ body {
     padding: 0 50px;
   }
   .about__desc {
-
     font-size: 14px;
- 
   }
-  .about__img{
+  .about__img {
     width: 40%;
     z-index: -1;
   }
-  .about__img img{
+  .about__img img {
     max-width: 150%;
   }
- .about__item:nth-child(2)  .about__img img{
-  max-width: 150%;
-  transform: translateX(-35%);
-}
+  .about__item:nth-child(2) .about__img img {
+    max-width: 150%;
+    transform: translateX(-35%);
+  }
 }
 
 @media (max-width: 800px) {
-  .about__img img{
+  .about__img img {
     max-width: 300%;
   }
- .about__item:nth-child(2)  .about__img img{
-  max-width: 200%;
-}
- .about__item:nth-child(3)  .about__img img{
-  transform: translateX(-25%);
-}
+  .about__item:nth-child(2) .about__img img {
+    max-width: 200%;
+  }
+  .about__item:nth-child(3) .about__img img {
+    transform: translateX(-25%);
+  }
 }
 @media (max-width: 600px) {
   .about {
@@ -730,12 +724,10 @@ body {
 .team__member:hover img {
   transform: scale(1);
 }
-@media (max-width: 1370px){
+@media (max-width: 1370px) {
   .team__wrapper {
-    
     justify-content: center;
     flex-wrap: wrap;
-    
   }
   .team__title {
     margin-bottom: 45px;
@@ -744,7 +736,7 @@ body {
     max-width: 300px;
     /* max-height: auto; */
   }
-  .member__name{
+  .member__name {
     font-size: 22px;
   }
 }
@@ -790,7 +782,7 @@ body {
   margin: 150px 0;
 }
 .rent__content {
-  height: 70vh;
+  height: 50vh;
   padding: 20px;
   display: flex;
   align-items: center;
@@ -851,13 +843,13 @@ body {
   background-color: var(--accent-color);
 }
 
-@media (max-width: 1370px){
+@media (max-width: 1370px) {
   .rent__content {
     width: 80%;
     margin: 0 auto;
+    height: 70vh;
   }
   .rent__desc {
-    
     font-size: 16px;
   }
 }
@@ -865,7 +857,9 @@ body {
   .rent__button {
     margin: 20px 0 40px;
   }
-
+  .rent__content {
+    height: 50vh;
+  }
   .rent__title {
     font-size: 16px;
   }
@@ -1000,10 +994,11 @@ body {
 }
 
 .pricelist__par {
+  padding: 50px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 50px 0;
+  column-gap: 40px;
   border-bottom: 1px solid #fff;
 }
 
@@ -1040,6 +1035,60 @@ body {
   margin-bottom: 100px;
 }
 
+@media (max-width: 1370px) {
+  .service__container {
+    padding: 0 40px;
+  }
+  .back__link {
+    margin-bottom: 100px;
+  }
+  .service__title {
+    margin-bottom: 110px;
+
+    font-size: 100px;
+  }
+  .video__play {
+    font-size: 16px;
+  }
+
+  .par__title {
+    font-size: 16px;
+  }
+  .par__price {
+    font-size: 24px;
+  }
+  .par__additional {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .service__hero {
+    min-height: 60vh;
+  }
+  .service__title {
+    font-size: 70px;
+  }
+}
+@media (max-width: 600px) {
+  .service__hero {
+    min-height: 40vh;
+  }
+  .back__link {
+    margin-bottom: 200px;
+  }
+  .service__title {
+    font-size: 40px;
+    margin-bottom: 250px;
+  }
+}
+@media (max-width: 600px) {
+  .service__title {
+    font-size: 30px;
+  }
+}
+
+/* CONTACT US */
 .contact-window {
   position: fixed;
   height: 100vh;
