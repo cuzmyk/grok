@@ -1,119 +1,68 @@
-// Найти все ссылки начинающиеся на #
-const anchors = document.querySelectorAll('a[href^="#"]');
-
-// Цикл по всем ссылкам
-for (let anchor of anchors) {
-  anchor.addEventListener("click", function (e) {
-    e.preventDefault(); // Предотвратить стандартное поведение ссылок
-    // Атрибут href у ссылки, если его нет то перейти к body (наверх не плавно)
-    const goto = anchor.hasAttribute("href")
-      ? anchor.getAttribute("href")
-      : "body";
-    // Плавная прокрутка до элемента с id = href у ссылки
-    document.querySelector(goto).scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((e) => {
+    if (e.isIntersecting) {
+      e.target.classList.add("animated");
+    } else {
+      e.target.classList.remove("animated");
+    }
   });
-}
+});
 
 const animItems = document.querySelectorAll(".animated_item");
+animItems.forEach((el) => observer.observe(el));
+
+const actionElem = document.querySelectorAll(".about__item");
+actionElem.forEach((e) => {
+  window.addEventListener("scroll", () => {
+    if (
+      e.getBoundingClientRect().top <= window.screen.height / 2 &&
+      e.getBoundingClientRect().bottom >= e.getBoundingClientRect().height
+    ) {
+      e.classList.add("active");
+    } else if (
+      e.getBoundingClientRect().top >= window.screen.height / 2 ||
+      e.getBoundingClientRect().bottom <= e.getBoundingClientRect().height
+    ) {
+      e.classList.remove("active");
+    }
+  });
+});
+
 const animBackground1 = document.querySelector(".bg-wave-1");
 const animBackground2 = document.querySelector(".bg-wave-2");
 const animBackground3 = document.querySelector(".bg-wave-3");
-
-if (animItems.length > 0) {
-  window.addEventListener("scroll", animOnScroll);
-
-  function animOnScroll() {
-    // console.log(window.scrollY);
-
-    // if (window.scrollY >= 400 && window.scrollY <= 2200) {
-    //   animBackground1.style.backgroundPosition = `top 0 right ${
-    //     // window.screen.width / 10 -
-    //     // (window.scrollY - 400) / (window.screen.width / 500)
-    //   }px)`;
-    // }
-    const screenWidth = window.screen.width;
-    let coef;
-    screenWidth >= 1800
-      ? (coef = 0.1 / screenWidth)
-      : (coef = 0.7 / screenWidth);
-    // coef = 0.1 / screenWidth;
-    animBackground1.style.backgroundPosition = `top 0 right ${
-      -screenWidth * coef - screenWidth * window.scrollY * coef
-    }px`;
-
-    if (window.scrollY >= 2000) {
-      animBackground2.style.backgroundPosition = `top 0 right ${
-        -(window.scrollY - 2000) / 4
-      }px`;
-    }
-    if (window.scrollY >= 800 && window.scrollY <= 2600) {
-      animBackground3.style.backgroundPosition = `bottom 0 right ${
-        -50 + (window.scrollY - 800) / 8
-      }px`;
-    }
-    // if (window.scrollY >= 2000) {
-    //   animBackground2.style.backgroundPosition = `top 0 right ${
-    //     -(window.scrollY - 2000) / 4
-    //   }px`;
-    // }
-    // if (window.scrollY >= 800 && window.scrollY <= 2600) {
-    //   animBackground3.style.backgroundPosition = `top 0 right ${
-    //     -50 + (window.scrollY - 800) / 8
-    //   }px`;
-    // }
-
-    for (let index = 0; index < animItems.length; index++) {
-      const animItem = animItems[index];
-      const animItemHeight = animItem.offsetHeight;
-      const animItemOffset = offset(animItem).top;
-      const animStart = 4;
-
-      let animItemPoint = window.innerHeight - animItemHeight / animStart;
-      if (animItemHeight > window.innerHeight) {
-        animItemPoint = window.innerHeight - window.innerHeight / animStart;
-      }
-
-      if (
-        window.scrollY > animItemOffset - animItemPoint &&
-        window.scrollY < animItemOffset + animItemPoint
-      ) {
-        animItem.classList.add("animated");
-      } else {
-        animItem.classList.remove("animated");
-      }
-
-      animItemPoint = window.innerHeight - animItemHeight;
-      if (animItemHeight > window.innerHeight) {
-        animItemPoint = window.innerHeight - window.innerHeight;
-      }
-
-      if (
-        window.scrollY > animItemOffset - animItemPoint &&
-        window.scrollY < animItemOffset + animItemHeight / 8
-      ) {
-        animItem.classList.add("active");
-      } else {
-        animItem.classList.remove("active");
-      }
-    }
+window.addEventListener("scroll", () => {
+  console.log(window.scrollY);
+  gsap.to(".bg-wave-1", {
+    x: window.scrollY / 10,
+  });
+  if (
+    window.scrollY >
+    document.documentElement.offsetHeight -
+      animBackground2.offsetHeight -
+      window.screen.height
+  ) {
+    gsap.to(".bg-wave-2", {
+      x:
+        -(window.scrollY / 10) +
+        (document.documentElement.offsetHeight -
+          animBackground2.offsetHeight -
+          window.screen.height) /
+          10,
+    });
   }
-  function offset(el) {
-    const rect = el.getBoundingClientRect(),
-      scrollLeft = window.scrollX || document.documentElement.scrollLeft,
-      scrollTop = window.scrollY || document.documentElement.scrollTop;
-    return { top: rect.top + scrollTop, left: rect.left + scrollLeft };
-  }
-  setTimeout(() => {
-    animOnScroll();
-  }, 300);
-}
+  gsap.to(".bg-wave-3", {
+    x: window.scrollY / 8,
+  });
+});
 
 const consultaionBtn = document.querySelectorAll("button.button");
 const closeConsultaionBtn = document.querySelectorAll(".close-contact-window");
 const contactWindow = document.querySelector(".contact-window");
+
+function enableScroll() {
+  window.onscroll = function () {};
+}
 
 consultaionBtn.forEach((e) => {
   e.onclick = function () {

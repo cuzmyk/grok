@@ -11,6 +11,10 @@
   src: url(./../fonts/TTFirsNeue/TTFirsNeue-DemiBold.ttf);
 }
 
+*,
+html {
+  scroll-behavior: smooth;
+}
 body {
   color: white;
   background-color: #101010;
@@ -277,27 +281,36 @@ body {
 
 .bg__img {
   position: absolute;
-  width: 110%;
+  width: calc(100% + 300px);
   height: 50%;
-  z-index: -1;
-  background-size: cover;
 
+  z-index: -1;
+  background-size: contain;
   background-repeat: no-repeat;
 }
+.bg__img img {
+  position: absolute;
+  object-fit: cover;
+  right: 0;
+  width: 100%;
+}
 
-.bg__img:nth-child(1) {
+.bg-wave-1 {
   top: 0;
-  background-position: top 0 right 50px;
+  right: 0;
 }
-.bg__img:nth-child(2) {
+.bg-wave-2 {
   bottom: 0;
-  transform: rotate(220deg);
-  background-position: bottom 0 left 0px;
+  left: 0;
 }
-.bg__img:nth-child(3) {
-  top: 50%;
-  transform: translate(50%, -50%) rotate(230deg);
-  background-position: top 0 right -50px;
+
+.bg-wave-3 {
+  top: 20%;
+}
+@media (max-width: 600px) {
+  .bg-wave-3 {
+    display: none;
+  }
 }
 
 .higher {

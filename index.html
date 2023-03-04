@@ -13,9 +13,9 @@
         <div class="header__content">
           <div class="header__nav">
             <ul>
-              <li><a href="#">Портфолио</a></li>
-              <li><a href="#">Услуги</a></li>
-              <li><a href="#">Контакты</a></li>
+              <li><a href="#services">Услуги</a></li>
+              <li><a href="#about">О нас</a></li>
+              <li><a href="#rent">Контакты</a></li>
             </ul>
           </div>
 
@@ -39,7 +39,7 @@
 
       <div class="bg__video">
         <video
-          src="./img/header/media.mp4"
+          src="./img/header/headerVideo.mp4"
           autoplay
           loop
           muted
@@ -49,20 +49,17 @@
     </header>
 
     <main class="main" id="main">
-      <div
-        class="bg__img bg-wave-1"
-        style="background-image: url(./img/BG/backgroundDecorations.svg)"
-      ></div>
-      <div
-        class="bg__img bg-wave-2"
-        style="background-image: url(./img/BG/backgroundDecorations.svg)"
-      ></div>
-      <div
-        class="bg__img bg-wave-3"
-        style="background-image: url(./img/BG/backgroundDecorationsFlipped.svg)"
-      ></div>
+      <div class="bg__img bg-wave-1">
+        <img src="./img/BG/backgroundDecorations.svg" alt="" />
+      </div>
+      <div class="bg__img bg-wave-2">
+        <img src="./img/BG/backgroundDecorationsFlipped.svg" alt="" />
+      </div>
+      <div class="bg__img bg-wave-3">
+        <img src="./img/BG/backgroundDecorationsVertical.svg" alt="" />
+      </div>
 
-      <section class="services">
+      <section class="services" id="services">
         <div class="container">
           <div class="services__content">
             <div class="title services__title">
@@ -90,7 +87,7 @@
         </div>
       </section>
 
-      <section class="about">
+      <section class="about" id="about">
         <div class="container">
           <div class="about__itmes">
             <div class="about__item animated_item">
@@ -168,7 +165,7 @@
         </div>
       </section>
 
-      <section class="rent">
+      <section class="rent" id="rent">
         <div class="container">
           <button class="button rent__button">Получить консультацию</button>
           <div class="rent__content animated_item">
@@ -201,6 +198,7 @@
         </div>
       </div>
     </div>
+    <script src="./libs/gsap-public/minified/gsap.min.js"></script>
     <script src="./js/script.js"></script>
   </body>
 </html>
