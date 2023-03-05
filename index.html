@@ -15,7 +15,7 @@
             <ul>
               <li><a href="#services">Услуги</a></li>
               <li><a href="#about">О нас</a></li>
-              <li><a href="#rent">Контакты</a></li>
+              <li><a href="#rent">Аренда техники</a></li>
             </ul>
           </div>
 
@@ -175,30 +175,54 @@
               и сдачи.
             </p>
 
-            <a href="#" class="rent__link">Узнать цену на технику</a>
+            <a
+              href="./img/Прайс 2023 - Прайс 23.pdf"
+              class="rent__link"
+              download
+              >Узнать цену на технику</a
+            >
           </div>
         </div>
       </section>
     </main>
     <div class="contact-window none">
-      <div class="contact__wrapper">
+      <form class="contact__wrapper" action="sender.php" method="post">
         <label for="name" class="contact-window__title"
           >Как мы можем к Вам обращаться?</label
         >
-        <input class="contact-window__input" type="text" name="name" />
+        <input
+          class="contact-window__input"
+          type="text"
+          name="name"
+          id="name"
+          required
+        />
         <label for="number" class="contact-window__title"
           >Укажите номер телефона</label
         >
-        <input class="contact-window__input" type="text" name="number" />
-        <button class="button contact-window__btn">
+        <input
+          class="contact-window__input"
+          id="number"
+          type="number"
+          name="number"
+          required
+        />
+        <button class="button contact-window__btn" type="button">
           Получить консультацию
         </button>
         <div class="back__link contact-window__link">
           <button class="close-contact-window">Вернуться назад</button>
         </div>
-      </div>
+      </form>
     </div>
     <script src="./libs/gsap-public/minified/gsap.min.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.min.js"
+      integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+      crossorigin="anonymous"
+    ></script>
+    <!-- <script src="js/jquery.maskedinput.js"></script> -->
+    <script src="js/jquery.validate.min.js"></script>
     <script src="./js/script.js"></script>
   </body>
 </html>

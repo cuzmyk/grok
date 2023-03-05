@@ -1102,6 +1102,11 @@ body {
 }
 
 /* CONTACT US */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
 .contact-window {
   position: fixed;
   height: 100vh;

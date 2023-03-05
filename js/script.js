@@ -32,7 +32,6 @@ const animBackground1 = document.querySelector(".bg-wave-1");
 const animBackground2 = document.querySelector(".bg-wave-2");
 const animBackground3 = document.querySelector(".bg-wave-3");
 window.addEventListener("scroll", () => {
-  console.log(window.scrollY);
   gsap.to(".bg-wave-1", {
     x: window.scrollY / 10,
   });
@@ -79,4 +78,33 @@ closeConsultaionBtn.forEach((e) => {
       contactWindow.classList.add("none");
     }
   };
+});
+
+//FROM
+
+jQuery(document).ready(function () {
+  jQuery(".contact-window__btn").click(function () {
+    var form = jQuery(this).closest("form");
+
+    if (form.valid()) {
+      form.css("opacity", ".5");
+      var actUrl = form.attr("action");
+
+      jQuery.ajax({
+        url: actUrl,
+        type: "post",
+        dataType: "html",
+        data: form.serialize(),
+        success: function (data) {
+          form.html(data);
+          form.css("opacity", "1");
+          form.find(".status").html("форма отправлена успешно");
+          //$('#myModal').modal('show') // для бутстрапа
+        },
+        error: function () {
+          form.find(".status").html("серверная ошибка");
+        },
+      });
+    }
+  });
 });
