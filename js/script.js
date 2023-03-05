@@ -83,11 +83,11 @@ closeConsultaionBtn.forEach((e) => {
 //FROM
 
 jQuery(document).ready(function () {
-  jQuery(".contact-window__btn").click(function () {
+  jQuery("form .contact-window__btn").click(function () {
     var form = jQuery(this).closest("form");
 
     if (form.valid()) {
-      form.css("opacity", ".5");
+      // form.css("opacity", ".5");
       var actUrl = form.attr("action");
 
       jQuery.ajax({
@@ -97,7 +97,7 @@ jQuery(document).ready(function () {
         data: form.serialize(),
         success: function (data) {
           form.html(data);
-          form.css("opacity", "1");
+          // form.css("opacity", "1");
           form.find(".status").html("форма отправлена успешно");
           //$('#myModal').modal('show') // для бутстрапа
         },
