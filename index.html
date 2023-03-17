@@ -8,20 +8,33 @@
     <link rel="stylesheet" href="./css/main.css" />
   </head>
   <body>
+    <div class="nav-btns">
+      <button id="menu-btn" data-state="closed">
+        <div class="menu-btn__icon"></div>
+      </button>
+    </div>
+    <nav class="menu" data-state="closed">
+      <ul class="menu__links">
+        <li><a href="#services">Услуги</a></li>
+        <li><a href="#rent">Аренда техники</a></li>
+        <li><a href="#contacts">Контакты</a></li>
+      </ul>
+    </nav>
+
     <header class="header">
       <div class="container">
         <div class="header__content">
           <div class="header__nav">
             <ul>
               <li><a href="#services">Услуги</a></li>
-              <li><a href="#about">О нас</a></li>
               <li><a href="#rent">Аренда техники</a></li>
+              <li><a href="#contacts">Контакты</a></li>
             </ul>
           </div>
 
           <div class="header_intro">
             <div class="header__logo animated_item">
-              <img src="./img/header/header_logo.svg" alt="" />
+              <img src="./img/header/header_logo2.svg" alt="" />
             </div>
 
             <p class="header__text animated_item">
@@ -87,7 +100,7 @@
         </div>
       </section>
 
-      <section class="about" id="about">
+      <section class="about">
         <div class="container">
           <div class="about__itmes">
             <div class="about__item animated_item">
@@ -97,7 +110,7 @@
                 </h2>
                 <p class="about__desc">
                   Мы используем только профессиональную технику самых именитых
-                  брендов. Комплект необходимой техники будет подобрал
+                  брендов. Комплект необходимой техники будет подобран
                   персонально для Вашего мероприятия!
                 </p>
               </div>
@@ -184,6 +197,22 @@
           </div>
         </div>
       </section>
+
+      <section class="contacts" id="contacts">
+        <div class="container">
+          <ul class="contacts__links">
+            <li>
+              <a href="#"><img src="./img/icons/telegram.svg" alt="" /></a>
+            </li>
+            <li>
+              <a href="#"><img src="./img/icons/whatsUp.svg" alt="" /></a>
+            </li>
+            <li>
+              <a href="#"><img src="./img/icons/phone.svg" alt="" /></a>
+            </li>
+          </ul>
+        </div>
+      </section>
     </main>
     <div class="contact-window none">
       <form class="contact__wrapper" action="sender.php" method="post">
@@ -210,12 +239,12 @@
         <button class="button contact-window__btn" type="button">
           Получить консультацию
         </button>
+        <div class="status"></div>
         <div class="back__link contact-window__link">
           <button type="button" class="close-contact-window">
             Вернуться назад
           </button>
         </div>
-        <div class="status"></div>
       </form>
     </div>
     <script src="./libs/gsap-public/minified/gsap.min.js"></script>

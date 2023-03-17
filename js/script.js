@@ -1,3 +1,20 @@
+//MENU BTN
+const menuBtn = document.getElementById("menu-btn");
+const menu = document.querySelector(".menu");
+const menuLinks = document.querySelectorAll(".menu li");
+
+menuBtn.onclick = () => {
+  menuBtn.dataset.state === "closed"
+    ? ((menuBtn.dataset.state = "opened"), (menu.dataset.state = "opened"))
+    : ((menuBtn.dataset.state = "closed"), (menu.dataset.state = "closed"));
+};
+menuLinks.forEach((e) => {
+  e.addEventListener("click", function () {
+    menuBtn.dataset.state = "closed";
+    menu.dataset.state = "closed";
+  });
+});
+
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((e) => {
     if (e.isIntersecting) {

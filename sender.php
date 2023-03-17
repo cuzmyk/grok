@@ -5,14 +5,14 @@
 	$to = "mixon749@mail.ru"; 
 	$date = date ("d.m.Y"); 
 	$time = date ("h:i");
-	$from = $email;
+	$from = $name;
 	$subject = "Заявка c сайта";
 
 	
 	$msg="
     Имя: $name /n
     Телефон: $phone /n"; 	
-	mail($to, $subject, $msg, "From: $to ");
+	mail($to, $subject, $msg, "From: $from ");
 
 ?>
 
